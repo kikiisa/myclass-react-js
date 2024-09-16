@@ -1,7 +1,14 @@
 import React,{StrictMode} from "react";
 import { createRoot } from "react-dom/client";
 
+// import component
+import SayHellow from "./components/sayHellow";
+
+
+// membuat wadah untuk menampung element default
 const root = createRoot(document.getElementById("root"));
+
+
 // menggunakan react element
 const heading = React.createElement("h1",null,"Biodata Perusahaan");
 
@@ -15,8 +22,13 @@ const paragraf = (
         <p>Hobby : Games</p>
         <p>Marital Status : Single</p>
         <p>Favorite Color : Black</p>
-
     </div>
 )
 
-root.render(paragraf)
+// render id root yang di ambil dari variabel root
+root.render(
+    <StrictMode>
+        <h1>Welome To React Js</h1>
+        <SayHellow name="kiki"/>
+    </StrictMode>
+)
